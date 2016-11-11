@@ -1,6 +1,14 @@
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-github').Strategy;
+var octonode = require('octonode');
+var fs = require('fs');
+
+fs.readFile('.gitbook-start/token.txt', 'utf8' ,(err, data) => {
+  if (err) console.log(err);
+    console.log(data);
+});
+
 
 passport.use(new Strategy({
         clientID: "676a763159b83edb09b9",
@@ -40,11 +48,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/libro', function(req, res) {
-  res.sendFile(__dirname + '/gh-pages/readme.html');
+    res.sendFile(__dirname + '/gh-pages/readme.html');
 });
 
 app.get('/', function(req, res) {
     res.render('home', {
+        user: req.user
+    });
+});
+
+app.get('/fallo', function(req, res) {
+    res.render('fallo', {
         user: req.user
     });
 });
