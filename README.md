@@ -1,24 +1,25 @@
-This example is a fork from [passport/express-4.x-facebook-example](https://github.com/passport/express-4.x-facebook-example) and demonstrates how to use [Express](http://expressjs.com/) 4.x and
-[Passport](http://passportjs.org/) to authenticate users using GitHub.  Use
-this example as a starting point for your own web applications.
+#Práctica Authentication OAuth con Github
 
-## Instructions
+##¿Que se hace en esta práctica?
 
-To install this example on your computer, clone the repository and install
-dependencies.
+* El servidor proveído por el plugin (sea iaas.ull.es o heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub. Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación. **La práctica se ha hecho en los plugins, abajo puede encontrar los enlaces.**
+* Para esta práctica se usara el paquete Passport-github para que el usuario acceda al contenido del libro haciendo login en github.
 
-```bash
-$ git clone git@github.com:ULL-ESIT-SYTW-1617/express-4.x-github-example.git
-$ cd express-4.x-github-example
-$ npm install
-```
+##Autores
 
-* The example uses environment variables to configure the consumer key and
-consumer secret needed to access GitHub's API.  Start the server with those
-variables set to the appropriate credentials.
-```bash
-$ CLIENT_ID=__GITHUB_CLIENT_ID__ CLIENT_SECRET=__GITHUB_CLIENT_SECRET__ node server.js
-```
-* Navigate to [https://github.com/settings/developers](https://github.com/settings/developers) (section OAuth applications) and press **register new application** to get the values for the `ID` and `SECRET`
-* Open a web browser and navigate to [http://localhost:3000/](http://localhost:3000/)
-to see the example in action.
+1. [Aitor Bernal Falcón](http://chinegua.github.io/)
+2. [Samuel Ramos Barroso](http://losnen.github.io/)
+3. [Joshua Pérez García](http://joshuape.github.io/)
+
+
+##Repositorio
+
+* [Repositorio de entrega del main](https://github.com/ULL-ESIT-SYTW-1617/crear-repositorio-en-github-aitor-joshua-samuel)
+* [Repositorio de entrega del plugin heroku](https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel)
+* [Repositorio de entrega del plugin iaas](https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-iaas-ull-es-aitor-joshua-samuel)
+* [Enlace a NPM del main](https://www.npmjs.com/package/gitbook-start-aitor-joshua-samuel)
+* [Enlace a NPM del plugin heroku](https://www.npmjs.com/package/gitbook-start-heroku-aitor-joshua-samuel)
+* [Enlace a NPM del plugin iaas](https://www.npmjs.com/package/gitbook-start-iaas-ull-es-aitor-joshua-samuel)
+
+##Enlaces de interés
+* [La práctica en gitbook](https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/practicas/practicaplugin.html)
