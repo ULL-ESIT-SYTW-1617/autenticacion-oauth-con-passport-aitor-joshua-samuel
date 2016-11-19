@@ -7,6 +7,22 @@
 * El servidor proveído por el plugin (sea iaas.ull.es o heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub. Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación. **La práctica se ha hecho en el plugins heroku, abajo puede encontrar el enlace.**
 * Para esta práctica se usara el paquete Passport-github para que el usuario acceda al contenido del libro haciendo login en github.
 
+##Instrucciones
+
+1. Desplegar la raíz de directorios con ```gitbook-start -n mi-libro```
+2. Desplegar el plugin heroku con ```gitbook-start -d heroku```
+3. Modificar los datos del fichero ```userData.json``` con la organización deseada y el token con los permisos necesarios.
+
+```json
+{
+    "org": "myOrg",
+    "token": "myToken"
+}
+```
+
+4. Desplegar el servidor con ```node server.js```
+5. Hacer login con Github.
+
 ##Autores
 
 1. [Aitor Bernal Falcón](http://chinegua.github.io/)
