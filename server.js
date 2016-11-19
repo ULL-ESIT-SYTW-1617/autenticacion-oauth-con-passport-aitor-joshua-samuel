@@ -2,19 +2,19 @@ var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-github').Strategy;
 var org = require('./models/access');
-
+var pertenece;
 passport.use(new Strategy({
         clientID: "91d8ed8041800a52daeb",
         clientSecret: "4faed6ee3b9d88a0a34903290d78cc72b12cad76",
         callbackURL: 'http://localhost:3000/login/github/return'
     },
     (accessToken, refreshToken, profile, cb) => {
-        org.access(accessToken);
+        pertenece = org.access(profile.username);
         return cb(null, profile);
     }));
 
 passport.serializeUser((user, cb) => {
-      cb(null, user);
+    cb(null, user);
 });
 
 passport.deserializeUser((obj, cb) => {
@@ -43,7 +43,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/libro', (req, res) => {
-    res.sendFile(__dirname + '/gh-pages/readme.html');
+    if (pertenece) {
+        res.sendFile(__dirname + '/gh-pages/readme.html');
+
+    } else {
+        res.render('fallo', {
+            user: req.user
+        });
+    }
 });
 
 app.get('/', (req, res) => {
