@@ -2,7 +2,12 @@ var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-github').Strategy;
 var org = require('./models/access');
+var data = require("./userData.json");
+var rename =require('./models/rename')
 var pertenece;
+
+rename.renameIndex();
+
 passport.use(new Strategy({
         clientID: "91d8ed8041800a52daeb",
         clientSecret: "4faed6ee3b9d88a0a34903290d78cc72b12cad76",
