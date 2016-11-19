@@ -1,8 +1,10 @@
 #Práctica Authentication OAuth con Github
 
+##**La práctica se ha hecho en el plugins heroku, abajo puede encontrar el enlace.**
+
 ##¿Que se hace en esta práctica?
 
-* El servidor proveído por el plugin (sea iaas.ull.es o heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub. Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación. **La práctica se ha hecho en los plugins, abajo puede encontrar los enlaces.**
+* El servidor proveído por el plugin (sea iaas.ull.es o heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub. Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación. **La práctica se ha hecho en el plugins heroku, abajo puede encontrar el enlace.**
 * Para esta práctica se usara el paquete Passport-github para que el usuario acceda al contenido del libro haciendo login en github.
 
 ##Autores
