@@ -9,19 +9,38 @@
 
 ##Instrucciones
 
-1. Desplegar la raíz de directorios con ```gitbook-start -n mi-libro```
-2. Desplegar el plugin heroku con ```gitbook-start -d heroku```
-3. Modificar los datos del fichero ```userData.json``` con la organización deseada y el token con los permisos necesarios.
+* Desplegar la raíz de directorios con ```gitbook-start -n mi-libro```
+* Desplegar el plugin heroku con ```gitbook-start -d heroku -p github```
+* Para el despliegue github debe rellenar el fichero userData.json con los siguientes campos:
+
+1. La organización de acceso.
+2. El token de github con los permisos necesarios.
+3. La url callback de su github app.
+4. El Client id de su github app.
+5. El Client secret de su github app.
 
 ```json
 {
     "org": "myOrg",
-    "token": "myToken"
+    "token": "myToken",
+    "url": "myCallbackUrl",
+    "idClient": "myClientID",
+    "secretClient": "mySecretClient"
 }
+
+* Desplegar el servidor con ```node server.js```
+* Hacer login con Github.
+
+
 ```
 
-4. Desplegar el servidor con ```node server.js```
-5. Hacer login con Github.
+```
+linux@user: gitbook-start -d heroku -p [github | local]
+? Introduce tu token de Heroku: mi-token
+? Introduzca el nombre de su app en Heroku: mi-aplicación
+Aplicación creada: mi-aplicación
+```
+
 
 ##Autores
 
